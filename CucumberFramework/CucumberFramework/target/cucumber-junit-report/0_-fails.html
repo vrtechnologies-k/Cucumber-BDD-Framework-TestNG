@@ -1,0 +1,135 @@
+<html xmlns:string="xalan://java.lang.String" xmlns:lxslt="http://xml.apache.org/xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Unit Test Results: </title>
+<link rel="stylesheet" type="text/css" title="Style" href="stylesheet.css">
+<script type="text/javascript" language="JavaScript">
+        var TestCases = new Array();
+        var cur;
+        </script><script type="text/javascript" language="JavaScript">
+        function displayProperties (name) {
+          var win = window.open('','JUnitSystemProperties','scrollbars=1,resizable=1');
+          var doc = win.document;
+          doc.open();
+          doc.write("<html><head><title>Properties of " + name + "</title>");
+          doc.write("<style type=\"text/css\">");
+          doc.write("body {font:normal 68% verdana,arial,helvetica; color:#000000; }");
+          doc.write("table tr td, table tr th { font-size: 68%; }");
+          doc.write("table.properties { border-collapse:collapse; border-left:solid 1 #cccccc; border-top:solid 1 #cccccc; padding:5px; }");
+          doc.write("table.properties th { text-align:left; border-right:solid 1 #cccccc; border-bottom:solid 1 #cccccc; background-color:#eeeeee; }");
+          doc.write("table.properties td { font:normal; text-align:left; border-right:solid 1 #cccccc; border-bottom:solid 1 #cccccc; background-color:#fffffff; }");
+          doc.write("h3 { margin-bottom: 0.5em; font: bold 115% verdana,arial,helvetica }");
+          doc.write("</style>");
+          doc.write("</head><body>");
+          doc.write("<h3>Properties of " + name + "</h3>");
+          doc.write("<div align=\"right\"><a href=\"javascript:window.close();\">Close</a></div>");
+          doc.write("<table class='properties'>");
+          doc.write("<tr><th>Name</th><th>Value</th></tr>");
+          for (prop in TestCases[name]) {
+            doc.write("<tr><th>" + prop + "</th><td>" + TestCases[name][prop] + "</td></tr>");
+          }
+          doc.write("</table>");
+          doc.write("</body></html>");
+          doc.close();
+          win.focus();
+        }
+      
+      </script>
+</head>
+<body>
+<h1>Unit Test Results.</h1>
+<table width="100%">
+<tr>
+<td align="left"></td><td align="right">Designed for use with <a href="http://www.junit.org/">JUnit</a> and <a href="http://ant.apache.org/">Ant</a>.</td>
+</tr>
+</table>
+<hr size="1">
+<h3>Class </h3>
+<table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th width="80%">Name</th><th>Tests</th><th>Errors</th><th>Failures</th><th>Skipped</th><th nowrap>Time(s)</th><th nowrap>Time Stamp</th><th>Host</th>
+</tr>
+<tr valign="top" class="Failure">
+<td><a title="Display all tests" href="0_.html"></a></td><td><a title="Display all tests" href="0_.html">1</a></td><td></td><td><a title="Display only failures" href="0_-fails.html">1</a></td><td></td><td>NaN</td><td></td><td></td>
+</tr>
+</table>
+<h2>Failures</h2>
+<table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th>Name</th><th>Status</th><th width="80%">Type</th><th nowrap>Time(s)</th>
+</tr>
+<tr valign="top" class="Failure">
+<td><a name="Login Functionality_1"></a>Login Functionality_1</td><td>Failure</td><td>org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//input[@id='UserName']"}
+Command duration or timeout: 109 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'dell-PC', ip: '192.168.1.4', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.3, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 031714f5-4283-441d-ae2d-f531ed9228f4
+*** Element info: {Using=xpath, value=//input[@id='UserName']}&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)&#13;
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)&#13;
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:490)&#13;
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:345)&#13;
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)&#13;
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)&#13;
+	at com.sun.proxy.$Proxy10.isDisplayed(Unknown Source)&#13;
+	at Cucumber.FunctionLibraries.BaseTest.type(Unknown Source)&#13;
+	at Cucumber.StepDefAndRunner.AdminRoleCreation.user_logs_in_using_UserName_Password(Unknown Source)&#13;
+	at ✽.When user logs in using "vertuser2@vertex.local" and "P@ssw0rd-U@t"(AdminRoleCreation.feature:8)&#13;
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//input[@id='UserName']"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'dell-PC', ip: '192.168.1.4', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'
+Driver info: driver.version: unknown&#13;
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/dell/AppData/Local/Temp/anonymous4686288698123672248webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)&#13;
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/dell/AppData/Local/Temp/anonymous4686288698123672248webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10668)&#13;
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/dell/AppData/Local/Temp/anonymous4686288698123672248webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)&#13;
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/dell/AppData/Local/Temp/anonymous4686288698123672248webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)&#13;
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/dell/AppData/Local/Temp/anonymous4686288698123672248webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)&#13;
+<br>
+<br>
+<code>Given user navigates to "https://qaportal.vertexsmb.com"....................passed<br>When user logs in using "vertuser2@vertex.local" and "P@ssw0rd-U@t".........failed<br>And clicked on login button.................................................skipped<br>Then login should be successful.............................................skipped<br>
+<br>StackTrace:<br>org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//input[@id='UserName']"}<br>Command duration or timeout: 109 milliseconds<br>For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br>Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'<br>System info: host: 'dell-PC', ip: '192.168.1.4', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'<br>Driver info: org.openqa.selenium.firefox.FirefoxDriver<br>Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.3, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]<br>Session ID: 031714f5-4283-441d-ae2d-f531ed9228f4<br>*** Element info: {Using=xpath, value=//input[@id='UserName']}<br>
+<br>	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br>
+<br>	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)<br>
+<br>	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)<br>
+<br>	at java.lang.reflect.Constructor.newInstance(Unknown Source)<br>
+<br>	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br>
+<br>	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br>
+<br>	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)<br>
+<br>	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)<br>
+<br>	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:490)<br>
+<br>	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)<br>
+<br>	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:345)<br>
+<br>	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)<br>
+<br>	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)<br>
+<br>	at com.sun.proxy.$Proxy10.isDisplayed(Unknown Source)<br>
+<br>	at Cucumber.FunctionLibraries.BaseTest.type(Unknown Source)<br>
+<br>	at Cucumber.StepDefAndRunner.AdminRoleCreation.user_logs_in_using_UserName_Password(Unknown Source)<br>
+<br>	at ✽.When user logs in using "vertuser2@vertex.local" and "P@ssw0rd-U@t"(AdminRoleCreation.feature:8)<br>
+<br>Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//input[@id='UserName']"}<br>For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br>Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'<br>System info: host: 'dell-PC', ip: '192.168.1.4', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'<br>Driver info: driver.version: unknown<br>
+<br>	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/dell/AppData/Local/Temp/anonymous4686288698123672248webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)<br>
+<br>	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/dell/AppData/Local/Temp/anonymous4686288698123672248webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10668)<br>
+<br>	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/dell/AppData/Local/Temp/anonymous4686288698123672248webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)<br>
+<br>	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/dell/AppData/Local/Temp/anonymous4686288698123672248webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)<br>
+<br>	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/dell/AppData/Local/Temp/anonymous4686288698123672248webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)<br>
+<br>
+</code></td><td>20.899</td>
+</tr>
+</table>
+<div class="Properties">
+<a href="javascript:displayProperties('.');">
+                    Properties &raquo;
+                </a>
+</div>
+</body>
+</html>
