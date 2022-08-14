@@ -8,10 +8,10 @@ public class TestProperties {
 
 	public final static String IEBOWSERDRIVER = "IEBOWSERDRIVER";
 	public final static String CHROMEDRIVER = "CHROMEDRIVER";
+	public final static String GECKODRIVER = "GECKODRIVER";
 	public final static String PROPERTY_FILENAME = "config/Test.properties";
 	public Properties test_properties = new Properties();
 	public final static String TESTSETUP = "TESTSETUP";
-	public static final String IEBOWSERDRIVER64 = "IEBOWSERDRIVER64";
 	public static final String BROWSERTYPE = "BROWSERTYPE";
 
 	public TestProperties() {

@@ -24,7 +24,7 @@ public class MytimeSheet extends BaseTest {
 
 	@Then("^It should navigate to the My timesheet Page$")
 	public void it_should_navigate_to_the_My_timesheet_Page() throws Throwable {
-	   waitForElement(60, driver, MTP.timeSheetlabel);
+	   waitForElement(driver, "//div[contains(text(),'Timesheet')]");
 	   VerifyObject(MTP.timeSheetlabel);
 	}
 

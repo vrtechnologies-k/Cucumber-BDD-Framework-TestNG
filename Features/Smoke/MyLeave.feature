@@ -12,7 +12,7 @@ Feature: About My Leave Page Functionality
 
     Examples: 
       | URL                           | UserName | Password     |
-      | http://timetrack.2xprime.com/ | venkatak | Jeswitha@123 |
+      | http://timetrack.xxxxxxx.com/ | ramyag   | xxxxxxxx@123 |
 
   Scenario: My Leave Page Functionality
     When user click on My Leave link

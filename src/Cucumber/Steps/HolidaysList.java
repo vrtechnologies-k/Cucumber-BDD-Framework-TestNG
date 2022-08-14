@@ -24,13 +24,13 @@ public class HolidaysList extends BaseTest {
 
 	@And("^It should navigate to the Holiday List Page$")
 	public void it_should_navigate_to_the_Holiday_List_Page() throws Throwable {
-		waitForElement(60, driver, HLP.holidayListlabel);
+		waitForElement(driver, "//div[text()='Holiday list']");
 		VerifyObject(HLP.holidayListlabel);
 	}
 
 	@Then("^user select the Location as \"([^\"]*)\" and Period as \"([^\"]*)\"$")
 	public void user_select_the_Location_as_and_Period_as(String Location, String Year) throws Throwable {
-		waitForElement(60, driver, HLP.location);
+		waitForElement(driver, "//div[text()='Holiday list']");
 	/*	selectByValue(HLP.location, Location);
 		selectByValue(HLP.year, Year)*/;
 		type(HLP.location, Location);

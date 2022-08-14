@@ -12,7 +12,7 @@ Feature: About Holiday List Page Functionality
 
     Examples: 
       | URL                           | UserName | Password     |
-      | http://timetrack.2xprime.com/ | venkatak | Jeswitha@123 |
+      | http://timetrack.xxxxx.com/   | ramyag   | xxxxxxxx@123 |
 
   Scenario Outline: Apply Holiday List Functionality
     When user click on Holiday List link

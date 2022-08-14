@@ -1,8 +1,10 @@
 package Cucumber.Libraries;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,18 +16,22 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import Cucumber.Utilities.TestProperties;
 import Cucumber.Utilities.Utilities;
+import cucumber.runtime.Timeout;
 
 public class BaseTest extends Utilities {
 
 	protected static WebDriver driver;
 	private static String IBROWSER = null;
-	private static String IBROWSER64 = null;
 	private static String CBROWSER = null;
-	
+	private static String FBROWSER = null;
+
 	/**
 	 * make the driver as static for different classes if driver not null in the class
 	 * @throws Exception 
@@ -35,45 +41,23 @@ public class BaseTest extends Utilities {
 		String browser=_properties.getProperty(TestProperties.BROWSERTYPE);
 		if (driver == null) {
 			IBROWSER = _properties.getProperty(TestProperties.IEBOWSERDRIVER);
-			IBROWSER64 = _properties.getProperty(TestProperties.IEBOWSERDRIVER64);
 			CBROWSER = _properties.getProperty(TestProperties.CHROMEDRIVER);
-			
+			FBROWSER = _properties.getProperty(TestProperties.GECKODRIVER);
+
 			if (browser.equals("Firefox")){
-				FirefoxProfile Prof = new FirefoxProfile();
-				DesiredCapabilities dc = DesiredCapabilities.firefox();
-				dc.setJavascriptEnabled(true);
-				Prof.setPreference("browser.download.folderList", 2);			
-				File directory = new File (".//");
-				String strConsltFilePath = directory.getCanonicalPath()+"\\DownloadingFiles";
-				Prof.setPreference("browser.download.dir",strConsltFilePath);
-				Prof.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/csv,application/x-zip-compressed,application/octet-stream,application/pdf,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.fdf, application/x-msdos-program, application/x-unknown-application-octet-stream, application/vnd.ms-powerpoint, application/excel, application/vnd.ms-publisher, application/x-unknown-message-rfc822, application/vnd.ms-excel, application/msword, application/x-mspublisher, application/x-tar, application/zip, application/x-gzip,application/x-stuffit,application/vnd.ms-works, application/powerpoint, application/rtf, application/postscript, application/x-gtar, video/quicktime, video/x-msvideo, video/mpeg, video/mp4, audio/x-wav, audio/x-midi, audio/x-aiff, image/png, image/jpeg, image/pjpeg, application/vnd.oasis.opendocument.text, text/plain"); // tipo espec�fico
-				Prof.setPreference("pdfjs.disabled",true);
-				Prof.setPreference("plugin.scan.Acrobat", "99.0");
-				Prof.setPreference("plugin.scan.plid.all", false);
-				Prof.setPreference("plugin.disable_full_page_plugin_for_types","application/pdf");
-				driver = new FirefoxDriver(Prof);
+				System.setProperty("webdriver.gecko.driver", FBROWSER);
+				driver = new FirefoxDriver();
 			}
 			if (browser.equals("IE")) {
-				if(System.getProperty("sun.arch.data.model").equals("64")){
-					System.setProperty("webdriver.ie.driver", IBROWSER64);
-				}else {
-					System.setProperty("webdriver.ie.driver", IBROWSER);
-				}
-				DesiredCapabilities dc = DesiredCapabilities.internetExplorer();
-				dc.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
-				dc.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-				driver = new InternetExplorerDriver(dc);
+
+				System.setProperty("webdriver.ie.driver", IBROWSER);
+
+				driver = new InternetExplorerDriver();
 			}
 			if (browser.equals("Chrome")){
 				System.setProperty("webdriver.chrome.driver", CBROWSER);
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments("--disable-extensions");
-				DesiredCapabilities dc = DesiredCapabilities.chrome();
-				dc.setJavascriptEnabled(true);
-				options.addArguments("test-type");
-				dc.setCapability("chrome.binary",CBROWSER);
-				dc.setCapability(ChromeOptions.CAPABILITY, options);
-				driver = new ChromeDriver(dc);
+
+				driver = new ChromeDriver();
 			}
 			driver.manage().window().maximize();
 		}
@@ -207,25 +191,28 @@ public class BaseTest extends Utilities {
 	 * @param WebElement
 	 * @return visible inner html text
 	 */
+	
+	protected void waitForElement(final WebDriver aDriver,
+			final String element) {
+		
+		WebDriverWait wait = new WebDriverWait(aDriver, Duration.ofSeconds(10));
 
-	protected void waitForElement(int timeout, final WebDriver aDriver,
-			final WebElement element) {
-		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(aDriver).withTimeout(
-				60, TimeUnit.SECONDS).pollingEvery(5, TimeUnit.SECONDS);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.className(element)));
 
-		ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
-			@Override
-			public Boolean apply(WebDriver aDriver) {
-				return element.isDisplayed();
-			}
-		};
-		try {
-			wait.until(expectation);
-		} catch (Throwable error) {
-			error.getMessage();
-		}
 	}
 
+	/*
+	 * protected void waitForElement(int timeout, final WebDriver aDriver, final
+	 * WebElement element) { FluentWait<WebDriver> wait = new
+	 * FluentWait<WebDriver>(aDriver).withTimeout( 60,
+	 * TimeUnit.SECONDS).pollingEvery(5, TimeUnit.SECONDS);
+	 * 
+	 * ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
+	 * 
+	 * @Override public Boolean apply(WebDriver aDriver) { return
+	 * element.isDisplayed(); } }; try { wait.until(expectation); } catch (Throwable
+	 * error) { error.getMessage(); } }
+	 */
 	/**
 	 * Verifying the webelement field using isDisplayed method
 	 * @param WebDriver
@@ -235,7 +222,7 @@ public class BaseTest extends Utilities {
 
 	public boolean VerifyObject(WebElement key) throws Exception {
 
-		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		if (key.isDisplayed()) {	
 			return true;
 		} {

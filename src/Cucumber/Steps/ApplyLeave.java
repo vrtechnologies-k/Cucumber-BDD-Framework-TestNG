@@ -56,7 +56,7 @@ public class ApplyLeave extends BaseTest {
 	}
 	@And("^Click on the cancel button$")
 	public void click_on_the_cancel_button() throws Throwable {
-	 waitForElement(60, driver, ALP.cancelBtn);
+	 waitForElement(driver, "//input[@value='Cancel']");
 		click(ALP.cancelBtn);
 	}
 	

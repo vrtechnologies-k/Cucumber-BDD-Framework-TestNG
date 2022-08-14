@@ -9,7 +9,7 @@ import com.cucumber.listener.ExtentCucumberFormatter;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.TestNGCucumberRunner;
 
-@CucumberOptions(features={"Features/Smoke"},glue={"Cucumber/Steps"},monochrome=true,tags={"@Smoke"},plugin = {"pretty", "html:target/cucumber","com.cucumber.listener.ExtentCucumberFormatter"})
+@CucumberOptions(features={"Features/Ecommerce"},glue={"Cucumber/Steps"},monochrome=true,tags={"@Smoke"},plugin = {"pretty", "html:target/cucumber","com.cucumber.listener.ExtentCucumberFormatter"})
 
 public class RunCukesTest {
 	

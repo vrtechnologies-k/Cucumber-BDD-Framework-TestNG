@@ -12,7 +12,7 @@ Feature: About Apply Leave Page Functionality
 
     Examples: 
       | URL                           | UserName | Password     |
-      | http://timetrack.2xprime.com/ | venkatak | Jeswitha@123 |
+      | http://timetrack.xxxxx.com/   | ramyag   | xxxxxxxxxx@123 |
 
   Scenario: Apply Leave Page Functionality
     When user click on Apply Leave link

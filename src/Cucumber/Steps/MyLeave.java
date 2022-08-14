@@ -40,7 +40,7 @@ public class MyLeave extends BaseTest {
 	@Then("^login should be successful$")
 	public void login_should_be_successful() throws Exception{
 	
-			waitForElement(60, driver, LP.ACCOUNTICON);
+			waitForElement(driver, "//a[contains(text(),'Hi')]");
 			VerifyObject(LP.ACCOUNTICON);
 	}
 	
@@ -57,7 +57,7 @@ public class MyLeave extends BaseTest {
 
 	@Then("^user verfiy the user of the account$")
 	public void user_verfiy_the_user_of_the_account() throws Throwable {
-		waitForElement(60, driver, MLP.Avatarname);
+		waitForElement(driver, "//p[contains(text(),'Venkata Reddy Kandula')]");
 		VerifyObject(MLP.Avatarname);
 	}
 

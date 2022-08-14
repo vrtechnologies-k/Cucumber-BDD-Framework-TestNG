@@ -4,7 +4,7 @@
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. -->
-<project name="TimeTrack" default="run" basedir=".">
+<project name="Cucumber BDD" default="run" basedir=".">
 <!-- ________________________initialize properties____________________________ -->
     <property environment="env"/>
     <property name="ws.home" value="."/>

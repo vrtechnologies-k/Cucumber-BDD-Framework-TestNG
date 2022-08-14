@@ -10,11 +10,11 @@
 	<classpathentry kind="lib" path="Lib/gherkin-2.12.2.jar"/>
 	<classpathentry kind="lib" path="Lib/hamcrest-core-1.3.jar"/>
 	<classpathentry kind="lib" path="Lib/jchronic-0.2.6.jar"/>
-	<classpathentry kind="lib" path="Lib/selenium-server-standalone-2.48.2.jar"/>
-	<classpathentry kind="lib" path="Lib/testng-6.8.jar"/>
 	<classpathentry kind="lib" path="Lib/cucumber-extentsreport-1.1.0.jar"/>
 	<classpathentry kind="lib" path="Lib/extentreports-2.41.0.jar"/>
 	<classpathentry kind="lib" path="Lib/freemarker-2.3.23.jar"/>
 	<classpathentry kind="lib" path="Lib/cucumber-testng-1.2.4.jar"/>
+	<classpathentry kind="lib" path="Lib/selenium-server-4.3.0.jar"/>
+	<classpathentry kind="lib" path="Lib/testng-6.14.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
